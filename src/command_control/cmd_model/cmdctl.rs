@@ -11,6 +11,11 @@ use super::Commands;
 )]
 pub struct CmdCtl {
 
+
+    /// Enable verbose logging.
+    #[structopt(long = "verbose", short = "v")]
+    pub verbose: bool,
+
     /// Base file path.
     #[structopt(long = "input", short = "i")]
     pub input: PathBuf,
@@ -20,12 +25,15 @@ pub struct CmdCtl {
     pub mixin: PathBuf,
 
     /// Output to file and leave base file as is.
+    ///
+    /**
+     Format Details
+     --------------
+     Best efforts will be used for format based on mime type.
+     Use 'format:path/to' notation for strict assignments.
+    */
     #[structopt(long = "output", short = "o")]
     pub output: PathBuf,
-
-    /// Enable verbose logging.
-    #[structopt(long = "verbose", short = "v", set = Hidden)]
-    pub verbose: bool,
 
     #[structopt(subcommand)]
     pub commands: Option<Commands>,

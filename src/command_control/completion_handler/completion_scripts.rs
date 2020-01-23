@@ -202,7 +202,7 @@ complete -F _sm -o bashdefault -o default sm
             println!("{}",r#"
     complete -c sm -n "__fish_use_subcommand" -s i -l input -d 'Base file path.'
 complete -c sm -n "__fish_use_subcommand" -s m -l mixin -d 'File path.'
-complete -c sm -n "__fish_use_subcommand" -s o -l output -d 'Output to file and leave base file as is.'
+complete -c sm -n "__fish_use_subcommand" -s o -l output -d 'Output to file and leave base file as is'
 complete -c sm -n "__fish_use_subcommand" -s v -l verbose -d 'Enable verbose logging.'
 complete -c sm -n "__fish_use_subcommand" -s h -l help -d 'Prints help information'
 complete -c sm -n "__fish_use_subcommand" -f -a "completions" -d 'Completion scripts for various shells.'
@@ -253,8 +253,8 @@ _sm() {
 '--input=[Base file path.]' \
 '-m+[File path.]' \
 '--mixin=[File path.]' \
-'-o+[Output to file and leave base file as is.]' \
-'--output=[Output to file and leave base file as is.]' \
+'-o+[Output to file and leave base file as is]' \
+'--output=[Output to file and leave base file as is]' \
 '-v[Enable verbose logging.]' \
 '--verbose[Enable verbose logging.]' \
 '-h[Prints help information]' \
@@ -439,8 +439,8 @@ Register-ArgumentCompleter -Native -CommandName 'sm' -ScriptBlock {
             [CompletionResult]::new('--input', 'input', [CompletionResultType]::ParameterName, 'Base file path.')
             [CompletionResult]::new('-m', 'm', [CompletionResultType]::ParameterName, 'File path.')
             [CompletionResult]::new('--mixin', 'mixin', [CompletionResultType]::ParameterName, 'File path.')
-            [CompletionResult]::new('-o', 'o', [CompletionResultType]::ParameterName, 'Output to file and leave base file as is.')
-            [CompletionResult]::new('--output', 'output', [CompletionResultType]::ParameterName, 'Output to file and leave base file as is.')
+            [CompletionResult]::new('-o', 'o', [CompletionResultType]::ParameterName, 'Output to file and leave base file as is')
+            [CompletionResult]::new('--output', 'output', [CompletionResultType]::ParameterName, 'Output to file and leave base file as is')
             [CompletionResult]::new('-v', 'v', [CompletionResultType]::ParameterName, 'Enable verbose logging.')
             [CompletionResult]::new('--verbose', 'verbose', [CompletionResultType]::ParameterName, 'Enable verbose logging.')
             [CompletionResult]::new('-h', 'h', [CompletionResultType]::ParameterName, 'Prints help information')
@@ -535,8 +535,8 @@ edit:completion:arg-completer[sm] = [@words]{
             cand --input 'Base file path.'
             cand -m 'File path.'
             cand --mixin 'File path.'
-            cand -o 'Output to file and leave base file as is.'
-            cand --output 'Output to file and leave base file as is.'
+            cand -o 'Output to file and leave base file as is'
+            cand --output 'Output to file and leave base file as is'
             cand -v 'Enable verbose logging.'
             cand --verbose 'Enable verbose logging.'
             cand -h 'Prints help information'

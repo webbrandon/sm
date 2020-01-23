@@ -8,8 +8,8 @@ pub mod merge;
 
 #[derive(Debug, Clone)]
 pub struct SchemaMerger {
-    file_one: PathBuf,
-    file_two: PathBuf,
+    input: PathBuf,
+    mixin: PathBuf,
     log_conf: Logger,
 }
 
@@ -17,8 +17,8 @@ impl SchemaMerger {
 
     pub fn new(files: (PathBuf, PathBuf)) -> Self {
         SchemaMerger {
-            file_one: files.0,
-            file_two: files.1,
+            input: files.0,
+            mixin: files.1,
             log_conf: RootLog::get_logger(false),
         }
     }
@@ -28,7 +28,9 @@ impl SchemaMerger {
         self
     }
 
-    pub fn merge(&mut self, a: Value, b: Value)  {
+    pub fn merge(&mut self)  {
+        let a:Value = serde_value::Value::Bool(false);
+        let b:Value = serde_value::Value::Bool(true);
         merge::MergeValue::new(a, b).merge();
     }
 

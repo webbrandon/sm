@@ -26,8 +26,7 @@ fn main() {
     );
 
     // This is a processing libary. Give it what it wants.
-    let mut merger = SchemaMerger::new(cli_options.get_files()).set_logger(log_config);
-    // let input =
-    // let mixin = 
-    // merger.merge(input, mixin);
+    let mut schema_merger = SchemaMerger::new(cli_options.get_files())
+        .set_logger(log_config)
+        .merge();
 }
